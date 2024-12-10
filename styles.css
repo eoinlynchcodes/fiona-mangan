@@ -1,119 +1,203 @@
-/* General Reset */
-body, h1, h2, p, ul, li, a {
+
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
-    list-style: none;
-    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
     font-family: Arial, sans-serif;
-  }
-  
-  body {
     line-height: 1.6;
     color: #333;
-    background: #f9f9f9;
-  }
-  
-  /* Container */
-  .container {
+    background-color: #f4f4f4;
+}
+.container {
     width: 90%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* Header */
-  header {
-    background: #333;
+    padding: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Navigation */
+nav {
+    background-color: #2c3e50;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-  }
-  
-  /* Navigation */
-  nav {
-    background: #444;
-  }
-  
-  nav ul {
+    padding: 1rem 0;
+}
+nav ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-  }
-  
-  nav ul li {
+}
+nav ul li {
     margin: 0 15px;
-  }
-  
-  nav ul li a {
+}
+nav ul li a {
     color: #fff;
-    text-transform: uppercase;
+    text-decoration: none;
     font-weight: bold;
-  }
-  
-  /* Main Content */
-  main {
-    margin: 20px 0;
-  }
-  
-  section {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    margin-top: 10px;
-  }
-  
-  .sponsors img, .gallery img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px;
-  }
-  
-  /* Social Media */
-  .social-media {
-    margin-top: 10px;
-  }
-  
-  .social-media li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  /* Footer */
-  footer {
-    background: #333;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #3498db;
+}
+/* Sections */
+section {
+    background-color: #fff;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+/* Highlights */
+#highlights ul {
+    list-style-type: none;
+}
+#highlights li {
+    margin-bottom: 1rem;
+    padding-left: 20px;
+    position: relative;
+}
+#highlights li::before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+/* Pro Cycling Stats */
+.pro-cycling-stats {
+    text-align: center;
+}
+.pro-cycling-stats a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+.pro-cycling-stats a:hover {
+    transform: scale(1.05);
+}
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+/* About */
+#about p {
+    margin-bottom: 1rem;
+}
+/* Sponsors */
+.sponsors ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.sponsors li {
+    background-color: #ecf0f1;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+/* Team History */
+#team-history ul {
+    list-style-type: none;
+}
+#team-history li {
+    margin-bottom: 0.5rem;
+    padding-left: 20px;
+    position: relative;
+}
+#team-history li::before {
+    content: "→";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+/* Contact */
+.social-media {
+    list-style-type: none;
+    display: flex;
+    justify-content: start;
+    margin-top: 1rem;
+}
+.social-media li {
+    margin-right: 1rem;
+}
+.social-media a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-media a:hover {
+    color: #2c3e50;
+}
+/* CTA Section */
+.cta-section {
+    background-color: #3498db;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-  }
-  
-  /* Responsive Design */
-  @media (min-width: 768px) {
+    padding: 2rem 0;
+}
+.cta-buttons {
+    margin-top: 1rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #34495e;
+}
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
     nav ul {
-      justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
     }
-  
-    .gallery, .sponsors {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    nav ul li {
+        margin: 10px 0;
     }
-  
-    .gallery img, .sponsors img {
-      flex: 1 1 30%;
-      max-width: 30%;
+    .sponsors ul {
+        flex-direction: column;
     }
-  }
+    .sponsors li {
+        margin: 5px 0;
+    }
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-button {
+        margin: 10px 0;
+    }
+}
